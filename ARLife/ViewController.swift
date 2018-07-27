@@ -95,9 +95,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         else if (imageName == "iPhone") {
              fileName = "iPhoneCard"
         }
+        
+        else if (imageName == "HitRefresh") {
+            fileName = "hitrefreshCard"
+        }
 
         let spriteKitScene = SKScene(fileNamed: fileName)
-
+        spriteKitScene?.isPaused = true
+        spriteKitScene?.isPaused = false
+        
         let spriteRatio = (spriteKitScene?.size.width)! / (spriteKitScene?.size.height)!
         let cardPlane = SCNPlane(width: spriteRatio * referenceImage.physicalSize.height, height: referenceImage.physicalSize.height)
 
@@ -114,6 +120,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         planeNode.name = fileName
+        planeNode.action
         node.addChildNode(planeNode)
     }
     
@@ -160,6 +167,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         else if (cardName == "falloutCard")
         {
             UIApplication.shared.open((URL(string: "https://www.amazon.com/Fallout-4-Xbox-One/dp/B00YQ1NOPM"))!)
+        }
+        else if (cardName == "hitrefreshCard")
+        {
+            UIApplication.shared.open((URL(string: "https://www.amazon.com/Hit-Refresh-Rediscover-Microsofts-Everyone/dp/0062652508"))!)
         }
     }
     
