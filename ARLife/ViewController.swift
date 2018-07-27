@@ -48,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information  along with other timing related functions. Show World origin so that we kno where things begin.
-        sceneView.showsStatistics = true
+        // sceneView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()
@@ -108,6 +108,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeNode.eulerAngles.x = -.pi / 2
         planeNode.position.x = planeNode.position.x + Float(referenceImage.physicalSize.width  ) + Float(referenceImage.physicalSize.width / 4)
         
+        if (imageName == "iPhone")
+        {
+            planeNode.position.x += planeNode.position.x/4
+        }
+        
         planeNode.name = fileName
         node.addChildNode(planeNode)
     }
@@ -151,6 +156,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         else if (cardName == "boseCard")
         {
             UIApplication.shared.open(URL(string: "https://www.amazon.com/dp/B0756CYWWD")!)
+        }
+        else if (cardName == "falloutCard")
+        {
+            UIApplication.shared.open((URL(string: "https://www.amazon.com/Fallout-4-Xbox-One/dp/B00YQ1NOPM"))!)
         }
     }
     
