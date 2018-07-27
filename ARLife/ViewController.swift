@@ -41,19 +41,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.runAction(repeatIndefinitely)
     }
     
-    func addRotation(x: Float, y: Float, z: Float, node: SCNNode) {
-        guard let fortuneCookieScene = SCNScene(named: "fortunecookie.scn"), let fortuneCookieNode = fortuneCookieScene.rootNode.childNode(withName: "fortuneCookie", recursively: true) else { return }
-        fortuneCookieNode.position = SCNVector3(x, y, z)
-        addRotationAnimation(node: fortuneCookieNode)
-        node.addChildNode(fortuneCookieNode)
-    }
-    
-//    func
-//
-//    func createReviewCard(x: Float, Y: Float, Z: Float) {
-//        let reviewCardScene = SKScene(size: CGSize)
-//    }
-//
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,7 +83,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let plane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
 
         // Set up the product card
-
+        print(imageName)
         if (imageName == "Bose") {
              fileName = "boseCard"
         }
@@ -121,6 +108,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeNode.eulerAngles.x = -.pi / 2
         planeNode.position.x = planeNode.position.x + Float(referenceImage.physicalSize.width  ) + Float(referenceImage.physicalSize.width / 4)
         
+        planeNode.name = fileName
         node.addChildNode(planeNode)
     }
     
@@ -152,6 +140,30 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
         sceneInfoLabel.text = "Move camera around to detect images"
+    }
+    
+    func handleCardTouch(_ cardName: String)
+    {
+        if (cardName == "iPhoneCard")
+        {
+            UIApplication.shared.open(URL(string: "https://www.amazon.com/Apple-iPhone-Fully-Unlocked-5-8/dp/B075QN8NDH")!)
+        }
+        else if (cardName == "boseCard")
+        {
+            UIApplication.shared.open(URL(string: "https://www.amazon.com/dp/B0756CYWWD")!)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        
+        if (touch.view == self.sceneView)
+        {
+            print("touch")
+            guard let result = sceneView.hitTest(touch.location(in: sceneView), options: nil).first else { return }
+            print(result.node.name!)
+            handleCardTouch(result.node.name!)
+        }
     }
     
 }
