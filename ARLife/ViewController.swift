@@ -57,35 +57,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("---------------------------------------------------------------loaded the view------------------------------------------------------------------------------------")
-        
         // Set the view's delegate
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information  along with other timing related functions. Show World origin so that we kno where things begin.
         sceneView.showsStatistics = true
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
-        
-        sceneView.antialiasingMode = .multisampling4X
-        configureLighting()
-//        let scene = SCNScene(named: "art.scnassets/fortunecookie.scn")!
-
-//         Create a new scene
-//        let modelScene = SCNScene(named: "art.scnassets/fortunecookie.scn")!
-        
-        // let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-//        sceneView.scene = scene
-        
         
         // Create a new scene
         let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,66 +87,41 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     /// - Tag: PlaceARContent
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        // Get anchors and check if they're object anchors or image anchors.
-        guard let objectAnchor = anchor as? ARObjectAnchor else { return }
-//        guard let imageAnchor = anchor as? ARImageAnchor else { return }
-        
-        // Object Anchor Processing
-        let referenceObject = objectAnchor.referenceObject
-        let objectName = referenceObject.name ?? "no name"
-        let treeModel = SCNScene(named: "art.scnassets/tree.scn")
-        
-        self.nodeModel = treeModel?.rootNode.childNode(withName: "tree", recursively: true)
-        print ("---------------------------------------------------------------------we found a tree---------------------------------------------------------------------")
-        
-        // Conditional Object Detection
+        guard let imageAnchor = anchor as? ARImageAnchor else { return }
         
         // Image Anchor Processing
-//        let referenceImage = imageAnchor.referenceImage
-//        let imageName = referenceImage.name ?? "no name"
-//
-//
-//
-//        let plane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
-//
-//        // Set up the product card
-//
-//        if (imageName == "Bose") {
-//             fileName = "boseCard"
-//        }
-//
-//        else if (imageName == "Fallout") {
-//             fileName = "falloutCard"
-//        }
-//
-//        else if (imageName == "iPhone") {
-//             fileName = "iPhoneCard"
-//        }
-//
-//        let spriteKitScene = SKScene(fileNamed: fileName)
-//
-//        let spriteRatio = (spriteKitScene?.size.width)! / (spriteKitScene?.size.height)!
-//        let cardPlane = SCNPlane(width: spriteRatio * referenceImage.physicalSize.height, height: referenceImage.physicalSize.height)
-//
-//        cardPlane.firstMaterial?.diffuse.contents = spriteKitScene
-//        cardPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
-//
-//        let planeNode = SCNNode(geometry: cardPlane)
-//        planeNode.eulerAngles.x = -.pi / 2
-//        planeNode.position.x = planeNode.position.x + Float(referenceImage.physicalSize.width  ) + Float(referenceImage.physicalSize.width / 4)
-        
-        // planeNode.position = SCNVector3Make(, <#T##y: Float##Float#>, <#T##z: Float##Float#>)
-        // planeNode.runAction(imageHighlightAction)
-        DispatchQueue.main.async {
-            let modelClone = self.nodeModel.clone()
-//            self.sceneInfoLabel.text = "Image detected: \"\(imageName)\""
-            self.scaleTreeUp(node: modelClone)
-            node.addChildNode(modelClone)
-            self.scaleGrow(node: modelClone)
-//            node.addChildNode(planeNode)
+        let referenceImage = imageAnchor.referenceImage
+        let imageName = referenceImage.name ?? "no name"
+
+        let plane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
+
+        // Set up the product card
+
+        if (imageName == "Bose") {
+             fileName = "boseCard"
         }
+
+        else if (imageName == "Fallout") {
+             fileName = "falloutCard"
+        }
+
+        else if (imageName == "iPhone") {
+             fileName = "iPhoneCard"
+        }
+
+        let spriteKitScene = SKScene(fileNamed: fileName)
+
+        let spriteRatio = (spriteKitScene?.size.width)! / (spriteKitScene?.size.height)!
+        let cardPlane = SCNPlane(width: spriteRatio * referenceImage.physicalSize.height, height: referenceImage.physicalSize.height)
+
+        cardPlane.firstMaterial?.diffuse.contents = spriteKitScene
+        cardPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
+
+        let planeNode = SCNNode(geometry: cardPlane)
+        planeNode.eulerAngles.x = -.pi / 2
+        planeNode.position.x = planeNode.position.x + Float(referenceImage.physicalSize.width  ) + Float(referenceImage.physicalSize.width / 4)
         
-        
+        node.addChildNode(planeNode)
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -189,11 +146,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func resetTrackingConfiguration() {
-//        guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
-        guard let referenceObjects = ARReferenceObject.referenceObjects(inGroupNamed: "AR Objects", bundle: Bundle.main) else { return }
+        guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
         let configuration = ARWorldTrackingConfiguration()
-//        configuration.detectionImages = referenceImages
-        configuration.detectionObjects = referenceObjects
+        configuration.detectionImages = referenceImages
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
         sceneInfoLabel.text = "Move camera around to detect images"
