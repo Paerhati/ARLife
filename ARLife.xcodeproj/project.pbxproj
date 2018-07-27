@@ -14,12 +14,10 @@
 		DC3AB4D62107A3AB000CD0A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AB4D42107A3AB000CD0A5 /* LaunchScreen.storyboard */; };
 		DC3AB4E12107A3AC000CD0A5 /* ARInstructionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AB4E02107A3AC000CD0A5 /* ARInstructionsTests.swift */; };
 		DC3AB4EC2107A3AC000CD0A5 /* ARInstructionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AB4EB2107A3AC000CD0A5 /* ARInstructionsUITests.swift */; };
-		DC3AB4FA2107F122000CD0A5 /* iPhoneCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC3AB4F92107F122000CD0A5 /* iPhoneCard.sks */; };
-		DC84FA452108EBC5002CA10A /* boseCardOld.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC84FA442108EBC5002CA10A /* boseCardOld.sks */; };
-		DC84FA472108EBD3002CA10A /* falloutCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC84FA462108EBD3002CA10A /* falloutCard.sks */; };
-		DC84FA4921090002002CA10A /* AmazonCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC84FA4821090001002CA10A /* AmazonCard.sks */; };
 		DCC4592E2109347E00D58951 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC4592D2109347D00D58951 /* art.scnassets */; };
 		DCC45930210AFA0200D58951 /* boseCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC4592F210AFA0200D58951 /* boseCard.sks */; };
+		DCC47A72210B1DC0005778F2 /* iPhoneCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */; };
+		DCC47A73210B1DC0005778F2 /* falloutCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC47A71210B1DC0005778F2 /* falloutCard.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +51,10 @@
 		DC3AB4E72107A3AC000CD0A5 /* ARLIfeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARLIfeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AB4EB2107A3AC000CD0A5 /* ARInstructionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARInstructionsUITests.swift; sourceTree = "<group>"; };
 		DC3AB4ED2107A3AC000CD0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC3AB4F92107F122000CD0A5 /* iPhoneCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = iPhoneCard.sks; sourceTree = "<group>"; };
-		DC84FA442108EBC5002CA10A /* boseCardOld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boseCardOld.sks; sourceTree = "<group>"; };
-		DC84FA462108EBD3002CA10A /* falloutCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = falloutCard.sks; sourceTree = "<group>"; };
-		DC84FA4821090001002CA10A /* AmazonCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AmazonCard.sks; sourceTree = "<group>"; };
 		DCC4592D2109347D00D58951 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DCC4592F210AFA0200D58951 /* boseCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boseCard.sks; sourceTree = "<group>"; };
+		DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = iPhoneCard.sks; sourceTree = "<group>"; };
+		DCC47A71210B1DC0005778F2 /* falloutCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = falloutCard.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +105,8 @@
 		DC3AB4C82107A3A9000CD0A5 /* ARLife */ = {
 			isa = PBXGroup;
 			children = (
+				DCC47A71210B1DC0005778F2 /* falloutCard.sks */,
+				DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */,
 				DCC4592D2109347D00D58951 /* art.scnassets */,
 				DC3AB4C92107A3A9000CD0A5 /* AppDelegate.swift */,
 				DC3AB4CD2107A3A9000CD0A5 /* ViewController.swift */,
@@ -116,10 +114,6 @@
 				DC3AB4D42107A3AB000CD0A5 /* LaunchScreen.storyboard */,
 				DC3AB4D72107A3AB000CD0A5 /* Info.plist */,
 				DC3AB4D22107A3AB000CD0A5 /* Assets.xcassets */,
-				DC84FA442108EBC5002CA10A /* boseCardOld.sks */,
-				DC84FA4821090001002CA10A /* AmazonCard.sks */,
-				DC3AB4F92107F122000CD0A5 /* iPhoneCard.sks */,
-				DC84FA462108EBD3002CA10A /* falloutCard.sks */,
 				DCC4592F210AFA0200D58951 /* boseCard.sks */,
 			);
 			path = ARLife;
@@ -247,14 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC47A72210B1DC0005778F2 /* iPhoneCard.sks in Resources */,
+				DCC47A73210B1DC0005778F2 /* falloutCard.sks in Resources */,
 				DC3AB4D62107A3AB000CD0A5 /* LaunchScreen.storyboard in Resources */,
-				DC84FA472108EBD3002CA10A /* falloutCard.sks in Resources */,
 				DCC4592E2109347E00D58951 /* art.scnassets in Resources */,
 				DC3AB4D32107A3AB000CD0A5 /* Assets.xcassets in Resources */,
 				DC3AB4D12107A3A9000CD0A5 /* Main.storyboard in Resources */,
-				DC84FA4921090002002CA10A /* AmazonCard.sks in Resources */,
-				DC84FA452108EBC5002CA10A /* boseCardOld.sks in Resources */,
-				DC3AB4FA2107F122000CD0A5 /* iPhoneCard.sks in Resources */,
 				DCC45930210AFA0200D58951 /* boseCard.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
