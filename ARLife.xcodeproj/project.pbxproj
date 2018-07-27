@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1C7A39210B2AC6003F68B3 /* iPhoneCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1C7A37210B2AC6003F68B3 /* iPhoneCard.sks */; };
+		DC1C7A3A210B2AC6003F68B3 /* falloutCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1C7A38210B2AC6003F68B3 /* falloutCard.sks */; };
+		DC1C7A3C210B2AEA003F68B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C7A3B210B2AEA003F68B3 /* ViewController.swift */; };
 		DC3AB4CA2107A3A9000CD0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AB4C92107A3A9000CD0A5 /* AppDelegate.swift */; };
-		DC3AB4CE2107A3A9000CD0A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AB4CD2107A3A9000CD0A5 /* ViewController.swift */; };
 		DC3AB4D12107A3A9000CD0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AB4CF2107A3A9000CD0A5 /* Main.storyboard */; };
 		DC3AB4D32107A3AB000CD0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3AB4D22107A3AB000CD0A5 /* Assets.xcassets */; };
 		DC3AB4D62107A3AB000CD0A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AB4D42107A3AB000CD0A5 /* LaunchScreen.storyboard */; };
@@ -16,8 +18,6 @@
 		DC3AB4EC2107A3AC000CD0A5 /* ARInstructionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AB4EB2107A3AC000CD0A5 /* ARInstructionsUITests.swift */; };
 		DCC4592E2109347E00D58951 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC4592D2109347D00D58951 /* art.scnassets */; };
 		DCC45930210AFA0200D58951 /* boseCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC4592F210AFA0200D58951 /* boseCard.sks */; };
-		DCC47A72210B1DC0005778F2 /* iPhoneCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */; };
-		DCC47A73210B1DC0005778F2 /* falloutCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = DCC47A71210B1DC0005778F2 /* falloutCard.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,23 +38,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1C7A37210B2AC6003F68B3 /* iPhoneCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = iPhoneCard.sks; sourceTree = "<group>"; };
+		DC1C7A38210B2AC6003F68B3 /* falloutCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = falloutCard.sks; sourceTree = "<group>"; };
+		DC1C7A3B210B2AEA003F68B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC3AB4C62107A3A9000CD0A5 /* ARLIfe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLIfe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AB4C92107A3A9000CD0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC3AB4CD2107A3A9000CD0A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC3AB4D02107A3A9000CD0A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC3AB4D22107A3AB000CD0A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC3AB4D52107A3AB000CD0A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC3AB4D72107A3AB000CD0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3AB4DC2107A3AC000CD0A5 /* ARLIfeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARLIfeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AB4E02107A3AC000CD0A5 /* ARInstructionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARInstructionsTests.swift; sourceTree = "<group>"; };
-		DC3AB4E22107A3AC000CD0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC3AB4E22107A3AC000CD0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../ARInstructionsTests/Info.plist; sourceTree = "<group>"; };
 		DC3AB4E72107A3AC000CD0A5 /* ARLIfeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARLIfeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AB4EB2107A3AC000CD0A5 /* ARInstructionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARInstructionsUITests.swift; sourceTree = "<group>"; };
 		DC3AB4ED2107A3AC000CD0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC4592D2109347D00D58951 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DCC4592F210AFA0200D58951 /* boseCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boseCard.sks; sourceTree = "<group>"; };
-		DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = iPhoneCard.sks; sourceTree = "<group>"; };
-		DCC47A71210B1DC0005778F2 /* falloutCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = falloutCard.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,6 @@
 			children = (
 				DC3AB4C82107A3A9000CD0A5 /* ARLife */,
 				DC3AB4DF2107A3AC000CD0A5 /* ARInstructionsTests */,
-				DC3AB4EA2107A3AC000CD0A5 /* ARInstructionsUITests */,
 				DC3AB4C72107A3A9000CD0A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,16 +104,17 @@
 		DC3AB4C82107A3A9000CD0A5 /* ARLife */ = {
 			isa = PBXGroup;
 			children = (
-				DCC47A71210B1DC0005778F2 /* falloutCard.sks */,
-				DCC47A70210B1DC0005778F2 /* iPhoneCard.sks */,
+				DC1C7A38210B2AC6003F68B3 /* falloutCard.sks */,
+				DC1C7A37210B2AC6003F68B3 /* iPhoneCard.sks */,
+				DC1C7A3B210B2AEA003F68B3 /* ViewController.swift */,
 				DCC4592D2109347D00D58951 /* art.scnassets */,
 				DC3AB4C92107A3A9000CD0A5 /* AppDelegate.swift */,
-				DC3AB4CD2107A3A9000CD0A5 /* ViewController.swift */,
 				DC3AB4CF2107A3A9000CD0A5 /* Main.storyboard */,
 				DC3AB4D42107A3AB000CD0A5 /* LaunchScreen.storyboard */,
 				DC3AB4D72107A3AB000CD0A5 /* Info.plist */,
 				DC3AB4D22107A3AB000CD0A5 /* Assets.xcassets */,
 				DCC4592F210AFA0200D58951 /* boseCard.sks */,
+				DC3AB4E22107A3AC000CD0A5 /* Info.plist */,
 			);
 			path = ARLife;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 		DC3AB4DF2107A3AC000CD0A5 /* ARInstructionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC3AB4EA2107A3AC000CD0A5 /* ARInstructionsUITests */,
 				DC3AB4E02107A3AC000CD0A5 /* ARInstructionsTests.swift */,
-				DC3AB4E22107A3AC000CD0A5 /* Info.plist */,
 			);
 			path = ARInstructionsTests;
 			sourceTree = "<group>";
@@ -241,12 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC47A72210B1DC0005778F2 /* iPhoneCard.sks in Resources */,
-				DCC47A73210B1DC0005778F2 /* falloutCard.sks in Resources */,
 				DC3AB4D62107A3AB000CD0A5 /* LaunchScreen.storyboard in Resources */,
 				DCC4592E2109347E00D58951 /* art.scnassets in Resources */,
+				DC1C7A3A210B2AC6003F68B3 /* falloutCard.sks in Resources */,
 				DC3AB4D32107A3AB000CD0A5 /* Assets.xcassets in Resources */,
 				DC3AB4D12107A3A9000CD0A5 /* Main.storyboard in Resources */,
+				DC1C7A39210B2AC6003F68B3 /* iPhoneCard.sks in Resources */,
 				DCC45930210AFA0200D58951 /* boseCard.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC3AB4CE2107A3A9000CD0A5 /* ViewController.swift in Sources */,
+				DC1C7A3C210B2AEA003F68B3 /* ViewController.swift in Sources */,
 				DC3AB4CA2107A3A9000CD0A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
