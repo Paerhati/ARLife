@@ -48,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information  along with other timing related functions. Show World origin so that we kno where things begin.
-        sceneView.showsStatistics = true
+        // sceneView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()
